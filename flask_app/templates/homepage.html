@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../templates/static/home.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Sarabun', sans-serif;
+
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url("{{ url_for('static', filename='images/bg3.jpg') }}");
+
+        }
+
+        nav {
+            background-color: white;
+            color: #fff;
+            padding: 10px;
+            max-height: 100px;
+
+        }
+
+
+        #reviews {
+            box-shadow: 5px 5px 5px 5px black;
+        }
+        .body {
+    width: 200px;
+    height:100px;
+    position: sticky;
+    margin-top: 20px;
+    background-color:transparent;
+} 
+
+/* .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 160px;
+    overflow: hidden;
+    font-family: "Lato", sans-serif;
+    font-size: 35px;
+    line-height: 40px;
+    color: #ecf0f1;
+}  */
+
+.content__container {
+    font-weight: 600;
+    overflow: hidden;
+    height: 40px;
+    padding: 0 40px;
+} 
+
+/* .content__container:before {
+    content: "[";
+    left: 0;
+}
+
+.content__container:after {
+    content: "]";
+    position: absolute;
+    right: 0;
+} */
+
+.content__container:after,
+.content__container:before {
+    position: absolute;
+    top: 0;
+    color: #16a085;
+    font-size: 42px;
+    line-height: 40px;
+    -webkit-animation-name: opacity;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: opacity;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+.content__container__text {
+    display: inline;
+    float: left;
+    margin: 0;
+}
+
+.content__container__list {
+    margin-top: 0;
+    padding-left: 40px;
+    text-align: left;
+    list-style: none;
+    -webkit-animation-name: change;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    animation-name: change;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.content__container__list__item {
+    line-height: 40px;
+    margin: 0;
+}
+
+@-webkit-keyframes opacity {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+} 
+
+@-webkit-keyframes change {
+
+    0%,
+    12.66%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    16.66%,
+    29.32% {
+        transform: translate3d(0, -25%, 0);
+    }
+
+    33.32%,
+    45.98% {
+        transform: translate3d(0, -50%, 0);
+    }
+
+    49.98%,
+    62.64% {
+        transform: translate3d(0, -75%, 0);
+    }
+
+    66.64%,
+    79.3% {
+        transform: translate3d(0, -50%, 0);
+    }
+
+    83.3%,
+    95.96% {
+        transform: translate3d(0, -25%, 0);
+    }
+} 
+
+@keyframes opacity {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes change {
+
+    0%,
+    12.66%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    16.66%,
+    29.32% {
+        transform: translate3d(0, -25%, 0);
+    }
+
+    33.32%,
+    45.98% {
+        transform: translate3d(0, -50%, 0);
+    }
+
+    49.98%,
+    62.64% {
+        transform: translate3d(0, -75%, 0);
+    }
+
+    66.64%,
+    79.3% {
+        transform: translate3d(0, -50%, 0);
+    }
+
+    83.3%,
+    95.96% {
+        transform: translate3d(0, -25%, 0);
+    }
+} 
+    </style>
+</head>
+
+<body>
+
+    <nav class="d-flex flex-row">
+        <ul class="nav nav-pills  justify-content-center align-items-center gap-5 align-items-sm-center m-auto">
+            <li class="nav-item">
+                <a href="#hrhome" class="nav-link px-sm-0 px-2 text-dark">
+                    <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Home</span></a>
+            </li>
+            <li>
+                <a href="#hraboutus" class="nav-link px-sm-0 px-2 text-dark">
+                    <i class="bi bi-fingerprint"></i><span class="ms-1 d-none d-sm-inline">About US</span> </a>
+            </li>
+        </ul>
+
+
+        <div class="body">
+            <div class="content">
+                <div class="content__container">
+                    <!-- <p class="content__container__text text-dark ">
+                        Hi
+                    </p> -->
+
+                    <ul class="content__container__list">
+                        <li class="content__container__list__item text-dark fs-1">CASHX</li>
+                        <li class="content__container__list__item text-dark fs-1">CASHX</li>
+                        <li class="content__container__list__item text-dark fs-1">CASHX</li>
+                        <li class="content__container__list__item text-dark fs-1">CASHX</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+s
+
+
+
+        <ul class="nav nav-pills  justify-content-center align-items-center gap-5 align-items-sm-center m-auto"
+            id="menu">
+            <li>
+                <a href="#hrreviews" class="nav-link px-sm-0 px-2 text-dark">
+                    <i class="fs-5 bi-speedometer2"></i><span class="ms-1 d-none d-sm-inline">Reviews</span> </a>
+            </li>
+            <li>
+                <a href="#hrfaq" class="nav-link px-sm-0 px-2 text-dark">
+                    <i class="bi bi-mortarboard-fill"></i><span class="ms-1 d-none d-sm-inline">FAQ</span></a>
+            </li>
+            <form action="/log"><input class="btn btn-dark" type="submit" value="Login">
+            </form>
+        </ul>
+
+    </nav>
+    <div class="col container d-flex flex-column h-100  p-3 pt-0 p-sm-5 pt-sm-0  text-white overflow-auto m-auto"
+        id="center">
+
+        <section class=" " id="hrhome">
+            <h2 class="text-center mb-4 mt-5">OPPORTUNIY</h2>
+            <div class="containerCard mt-3 d-flex gap-4 align-items-center">
+
+            
+                <p><strong>Do you want to take your business to new heights?</strong><br>
+                    Look no further. Join us now to explore how our innovative ERP platform can revolutionize the way
+                    you manage your business. Registration is simple, but the benefits for your company will be immense.
+                    Together, let's build a future where your business excels at every step. Ready to elevate your
+                    enterprise? Sign up now.</p>
+            </div>
+        </section>
+        <section class="" id="hraboutus">
+            <div class="aboutMeContainer col-9 p-5 d-flex flex-column gap-5 m-auto">
+                <h2 class="text-center mb-4">About Us</h2>
+                <p><strong>Who we are ?</strong> <br> Our website embodies the future of business management, offering a
+                    comprehensive and innovative solution designed to propel companies toward operational excellence.
+                    Through our platform, businesses discover an integrated ecosystem of ERP that simplifies every
+                    aspect of their operations. Intuitive tools, increased visibility into processes, and informed
+                    decision-making are integral to our solution. Whether you're an ambitious startup or an established
+                    enterprise, our site provides a tailored approach to meet your specific needs. With a combination of
+                    advanced features, flexibility, and user-friendliness, we provide a platform that transforms
+                    challenges into opportunities, fostering growth and efficiency. Join us today and explore how our
+                    revolutionary solution can propel your business to new heights.</p>
+            </div>
+        </section>
+
+        <section class="" id="hrreviews">
+            <h2 class="text-center mb-4">REVIEWS</h2>
+            <div class="aboutMeContainer col-9 p-5 d-flex m-auto gap-5">
+                <div class="card text-dark col-4 p-3" id="reviews">
+                    <p class="m-auto">"Choosing CASHX was the best decision for our business. Their innovative solutions
+                        and dedicated support have elevated our efficiency and growth. A truly transformative
+                        experience, we couldn't be happier!"</p>
+                    <img src="{{ url_for('static', filename='images/stars.png') }}" width="180px" alt="" class="m-auto">
+                </div>
+                <div class="card text-dark col-4 p-3" id="reviews">
+                    <p class="">
+                        "Partnering with CASHX has been a game-changer. Their platform seamlessly
+                        integrates into our operations, boosting productivity and enhancing overall performance. A
+                        top-notch experience that has truly set us on a path to success."</p>
+                    <img src="{{ url_for('static', filename='images/stars.png') }}" width="180px" alt="" class="m-auto">
+                </div>
+                <div class="card text-dark col-4 p-3 mx-3" id="reviews">
+                    <p class="m-auto">
+                        "Working with CASHX has exceeded all expectations. Their tailored solutions have
+                        not only streamlined our processes but have also brought a new level of precision to our
+                        operations. The team's commitment to excellence and constant innovation makes them an invaluable
+                        partner in our business journey."</p>
+                    <img src="{{ url_for('static', filename='images/stars.png') }}" width="180px" alt="" class="m-auto">
+                </div>
+            </div>
+        </section>
+        <section class="content " id="hrfaq">
+            <div class="aboutMeContainer col-9 p-5 d-flex flex-column gap-5 m-auto">
+                <h2 class="text-center mb-4">FAQ</h2>
+
+                <div class="accordion" id="faqAccordion">
+
+                    <!-- FAQ Item 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                How can i sign up?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                fill out the form at the footer
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Is it easy to use your ERP?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, using our ERP is simple, by registering with us we will offer you training on
+                                how to use it
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                How to ensure data security in your ERP system?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Our ERP incorporates advanced security measures, such as role-based access
+                                permissions.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <footer class=" bg-dark  text-light justify-content-around d-flex p-4" id="footer">
+
+        <!-- Form Section -->
+        <div class="col-3 ">
+            <h3 class="ms-5">Let's Start 🔥🔥</h3>
+            <form id="contactForm" class="ms-5">
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="telephone" class="form-label">Telephone Number</label>
+                    <input type="tel" class="form-control" id="telephone" name="telephone" required>
+                </div>
+                <div class="mb-3">
+                    <label for="companyType" class="form-label">Type of Company</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" required>
+                </div>
+                <button type="submit" class="btn btn-primary"
+                    onclick="alert('Thank you for your trust. We will contact you soon!')">Submit</button>
+            </form>
+        </div>
+        <div class="  d-flex flex-column  col-2 justify-content-center ">
+            <h3>For more information:</h3>
+            <div class="mt-3">
+                <a href="https://mail.google.com"><img src="{{ url_for('static', filename='images/Gmail-logo.png') }}"
+                        width="100px" alt="" class="m-auto"></a>
+
+                <a href="https://facebook.com"><img src="{{ url_for('static', filename='images/Facebook_logo.png') }}"
+                        width="55px" alt="" class="m-auto"></a>
+                <a href="https://twitter.com"><img src="{{ url_for('static', filename='images/X_logo.png') }}"
+                        width="65px" alt="" class="m-auto ms-3"></a>
+            </div>
+        </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
